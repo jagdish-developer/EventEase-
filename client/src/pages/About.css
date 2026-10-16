@@ -1,0 +1,248 @@
+.about-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  padding: 40px 20px;
+  box-sizing: border-box;
+
+  color: white;
+}
+
+.about-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.62);
+
+  z-index: 0;
+}
+
+.about-hero {
+  position: relative;
+  z-index: 1;
+
+  max-width: 900px;
+  margin: 20px auto 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 30px;
+}
+
+.about-logo {
+  width: 130px;
+  height: 130px;
+
+  object-fit: contain;
+}
+
+.about-heading h1 {
+  margin: 0 0 10px;
+
+  font-size: clamp(34px, 5vw, 55px);
+  font-weight: 700;
+}
+
+.about-heading p {
+  margin: 0;
+
+  font-size: clamp(16px, 2vw, 22px);
+
+  color: rgba(255, 255, 255, 0.75);
+
+  line-height: 1.5;
+}
+
+.about-content {
+  position: relative;
+  z-index: 1;
+
+  width: min(1000px, 100%);
+
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+
+/* =========================
+   ABOUT CARDS
+========================= */
+
+.about-card {
+  padding: 30px;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  border-radius: 25px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-sizing: border-box;
+
+  /* Hover animation */
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+/* =========================
+   ABOUT CARD HOVER
+========================= */
+
+.about-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #ff477e;
+
+  background: rgba(20, 20, 20, 0.62);
+}
+
+
+.about-card:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.about-card h2 {
+  margin: 0 0 18px;
+
+  font-size: 28px;
+}
+
+.about-card p {
+  margin: 0 0 14px;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.about-card p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   WHY EVENTEASE POINTS
+========================= */
+
+.about-points {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+.about-points div {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px;
+
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.about-points span {
+  color: #ff477e;
+
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+.about-points p {
+  margin: 0;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .about-hero {
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 10px;
+  }
+
+  .about-logo {
+    width: 110px;
+    height: 110px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+  .about-page {
+    padding: 25px 15px;
+  }
+
+  .about-hero {
+    margin-bottom: 30px;
+  }
+
+  .about-logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .about-card {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .about-card h2 {
+    font-size: 23px;
+  }
+
+  .about-card p {
+    font-size: 15px;
+  }
+
+  .about-points {
+    grid-template-columns: 1fr;
+  }
+
+}
